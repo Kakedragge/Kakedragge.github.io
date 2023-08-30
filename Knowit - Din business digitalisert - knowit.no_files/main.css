@@ -1,3 +1,12 @@
+/* Your style here */
+
+.should-display-none {
+    display: none;
+}
+
+
+/* Style end */
+
 @media print{
     html,body{
         font-size:16px !important
