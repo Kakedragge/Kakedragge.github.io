@@ -1,10 +1,4 @@
-/* Your style here */
 
-.should-display-none {
-  display: none;
-}
-
-/* Style end */
 
 @media print {
   html,
@@ -25759,3 +25753,19 @@ page-intro--industry .page-links_share .industry-share {
 .page-intro_header .row .columns p {
   color: white !important;
 }
+
+/* Your style here */
+
+.should-display-none {
+  display: none;
+}
+
+.slick-track {
+  display: flex;  
+}
+
+.slide-container {
+  flex: 0 0 100%;
+}
+
+/* Style end */
