@@ -25768,4 +25768,8 @@ page-intro--industry .page-links_share .industry-share {
   flex: 0 0 100%;
 }
 
+.content-block_textblock--wide {
+  width: 100%;
+}
+
 /* Style end */
