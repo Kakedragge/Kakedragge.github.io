@@ -25768,6 +25768,12 @@ page-intro--industry .page-links_share .industry-share {
   flex: 0 0 100%;
 }
 
+.slick-next:focus-visible, .slick-prev:focus-visible {
+  outline: 2px solid #0f5ba1;
+  outline-offset: -4px;
+  opacity: 1;
+}
+
 .content-block_textblock--wide {
   width: 100%;
 }

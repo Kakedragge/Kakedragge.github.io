@@ -107,7 +107,7 @@
                                     </div>
                                     
                                     <div id="top-icon-menu-mobile" class="top-icon">
-                                        <a id="mobilenav-icon" class="js-toggle-button toggle-menufield" href="https://www.knowit.no/#" role="button" data-type="menu">
+                                        <a id="mobilenav-icon" onclick="onFocusTop()" class="js-toggle-button toggle-menufield" href="https://www.knowit.no/#" role="button" data-type="menu">
                                             <div id="open-menu-icon-mobile" class="top-icon-container js-menu-button">
                                                 <img loading="lazy" src="./Knowit - Din business digitalisert - knowit.no_files/icon-menu.svg" alt="menu icon">
                                                 <span id="text-menu-mobile" class="icon-link">Meny</span>
@@ -119,13 +119,14 @@
                                         </a>
                                     </div>
                                     <div id="top-icon-menu-desktop" class="top-icon">
-                                        <a id="sidenav-icon" class="js-toggle-button toggle-menufield" href="https://www.knowit.no/#" role="button" data-type="menu" data-is-desktop="">
+                                        <a id="sidenav-icon" onclick="onFocusTop()" class="js-toggle-button toggle-menufield" href="https://www.knowit.no/#" role="button" data-type="menu" data-is-desktop="">
                                             <div id="open-menu-icon" class="top-icon-container js-menu-button">
                                                 <img loading="lazy" src="./Knowit - Din business digitalisert - knowit.no_files/icon-menu.svg" alt="menu icon">
                                                 <span class="icon-link">Meny</span>
                                             </div>
                                         </a>
                                     </div>
+                                    
                                 </div>
                             </nav>
                         </div>
@@ -177,13 +178,14 @@
 </div>
 
             <div id="mySidenav" class="sidenav hidden">
-    <a id="side-nav-close" href="https://www.knowit.no/#" class="js-toggle-button toggle-menufield closebtn" data-type="menu">
+    <a id="side-nav-close" onclick="onCloseMenu()" href="https://www.knowit.no/#" class="js-toggle-button toggle-menufield closebtn" data-type="menu">
         <div>
             <img loading="lazy" src="./Knowit - Din business digitalisert - knowit.no_files/icon-close-start.svg" alt="close icon">
         </div>
         <span>Lukk</span>
     </a>
-        <div class="sidemenu-item-container">
+        <div id="side-menu-container-id" class="sidemenu-item-container" >
+                <div tabindex="0" onfocus="onFocusBottom()"></div>
                 <div class="navigation-item">
                     <a href="https://www.knowit.no/#" id="dropdown-children">
                         <span>Tjenester</span>
@@ -231,12 +233,29 @@
                         <span>Vår blogg</span>
                                             </a>
                 </div>
-                <div class="navigation-item">
-                    <a href="https://www.knowit.no/kontakt/" id="">
+                <div class="navigation-item" >
+                    <a href="https://www.knowit.no/kontakt/" id="contact-link-id">
                         <span>Kontakt</span>
                                             </a>
                 </div>
+                <div tabindex="0" onfocus="onFocusTop()"></div>
         </div>
+        <script>
+          let firstTime = true;
+          function onFocusTop() {
+            document.getElementById("dropdown-children").focus();
+          }
+          function onFocusBottom() {
+            if (firstTime) {
+              firstTime = false;
+              document.getElementById("dropdown-children").focus();
+            }
+            else document.getElementById("contact-link-id").focus();
+          }
+          function onCloseMenu() {
+            firstTime = true;
+          }
+        </script>
             <div class="languagefield-mobile hide-for-large-up">
                 <a href="https://www.knowit.no/#" id="language-item-mobile"><span>Land</span><span class="arrow"><img src="./Knowit - Din business digitalisert - knowit.no_files/dropdown-icon.svg"></span></a>
                 <div id="show-languages-mobile" class="show-languages-mobile hidden">
